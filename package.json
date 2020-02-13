@@ -1,0 +1,25 @@
+{
+  "name": "employee-summary",
+  "version": "1.0.0",
+  "description": "Command line application to generate team profiles",
+  "main": "index.js",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "inquirer": "^7.0.4",
+    "jest": "^25.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest --verbose test/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexgignilliat/Employee-Summary.git"
+  },
+  "author": "Alex Gignilliat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexgignilliat/Employee-Summary/issues"
+  },
+  "homepage": "https://github.com/alexgignilliat/Employee-Summary#readme"
+}
