@@ -129,7 +129,7 @@ function generateHtml(){
         </div>
         </div>`
 
-        fs.appendFile('team-profile.html', managerHtml, 'utf8', function (error) {
+        fs.appendFile('output/team-profile.html', managerHtml, 'utf8', function (error) {
             if (error) {
                 console.log(error)
             }
@@ -153,7 +153,7 @@ function generateHtml(){
         </div>
         </div>`
 
-        fs.appendFile('team-profile.html', engineerHtml, 'utf8', function (error) {
+        fs.appendFile('output/team-profile.html', engineerHtml, 'utf8', function (error) {
             if (error) {
                 console.log(error)
             }
@@ -177,7 +177,7 @@ function generateHtml(){
         </div>
         </div>`
 
-        fs.appendFile('team-profile.html', internHtml, 'utf8', function (error) {
+        fs.appendFile('output/team-profile.html', internHtml, 'utf8', function (error) {
             if (error) {
                 console.log(error)
             }
@@ -201,7 +201,7 @@ function htmlHead(){
     </header>
     <div class="container d-flex">`
 
-    fs.appendFile('team-profile.html', htmlHead, 'utf8', function (error) {
+    fs.appendFile('output/team-profile.html', htmlHead, 'utf8', function (error) {
         if (error) {
             console.log(error)
         }
