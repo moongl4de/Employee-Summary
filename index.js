@@ -4,15 +4,16 @@ const Manager = require("./lib/Manager")
 const Engineer = require("./lib/Engineer")
 const Intern = require("./lib/Intern")
 
-
+//arrays for each role
 let managerArray = []
 let internArray = []
 let engineerArray = []
-
-let updateData;
+//switch for determining whether the user needs to add more employees or if they are finished and need to generate the HTML
+//1 = On (default)
+//0 = Off (trigger HTML generator function)
 let statusSwitch = 1
-let addMore;
 
+//prompt the user for some information regarding their dev team, then use a switch statement to run through the different roles and their exclusive prompts (Office # for manager, Github username for engineer, School fro intern)
 const prompts = async function(questions){
     const userInput = await inquirer.prompt(questions);
     switch(userInput.title){
@@ -40,7 +41,7 @@ const prompts = async function(questions){
             return;
     }
 }
-
+//user input function that holds the main questions that apply to all Employee roles
 async function userInput(){
     const questions = [
         {
@@ -71,7 +72,7 @@ async function userInput(){
     }
 
 }
-
+//Function for determining whether or not the user wants to add more employees to their team. If "No" is selected, the statusSwitch is turned of(set to 0) and the generateHtml function is called
 async function addMoreEmployeesFunc(){
     let checkStatus = await inquirer.prompt(addMoreEmployees)
     console.log(checkStatus.addConfirm)
@@ -82,6 +83,7 @@ async function addMoreEmployeesFunc(){
     }
 }
 
+//Prompts exclusive to certain roles
 const managerPrompt = {
     type: "input",
     name: "office",
@@ -99,7 +101,7 @@ const internPrompt = {
     name: "school",
     message: "What's school is the intern attending?"
 }
-
+//Prompt to determine if more employees need to be added
 const addMoreEmployees = {
     type: "list",
     name: "addConfirm",
@@ -107,7 +109,8 @@ const addMoreEmployees = {
     choices: ["Yes", "No"]
 }
 
-
+//Function to generate HTML
+//Generates the HTML boilerplate, then goes through a series of loops that go through each of the role arrays and generate cards with the relevant information, then appends the cards to team-profile.html
 function generateHtml(){
     htmlHead();
     for(let i = 0; i < managerArray.length; i++){
@@ -181,7 +184,7 @@ function generateHtml(){
         });
     }
 }
-
+//Function to append the HTML boilerplate to team-profile.html
 function htmlHead(){
     const htmlHead = `<!DOCTYPE html>
     <html lang="en">
@@ -205,7 +208,7 @@ function htmlHead(){
     });
 }
 
-
+//If the statusSwitch is set to 1, call userInput()
 if(statusSwitch === 1){
     userInput();
     }
