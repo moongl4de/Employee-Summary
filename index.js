@@ -114,7 +114,7 @@ const addMoreEmployees = {
 function generateHtml(){
     htmlHead();
     for(let i = 0; i < managerArray.length; i++){
-       const managerHtml = `<div class="card m-3 " style="width: 300px">
+       const managerHtml = `<div class="card" style="width: 300px">
         <div class="card-header text-white bg-dark">
         <h3 style="text-align: center;">${managerArray[i].name}</h3>
         <i class="fas fa-eye fa-4x d-flex justify-content-center"></i>
@@ -138,7 +138,7 @@ function generateHtml(){
     }
     for(let i = 0; i < engineerArray.length; i++){
 
-        const engineerHtml = `<div class="card m-3" style="width: 300px">
+        const engineerHtml = `<div class="card" style="width: 300px">
         <div class="card-header text-white bg-dark">
         <h3 style="text-align: center;">${engineerArray[i].name}</h3>
         <i class="fas fa-code fa-4x d-flex justify-content-center"></i>
@@ -162,7 +162,7 @@ function generateHtml(){
     }
     for(let i = 0; i < internArray.length; i++){
 
-        const internHtml = `<div class="card m-3" style="width: 300px">
+        const internHtml = `<div class="card" style="width: 300px">
         <div class="card-header text-white bg-dark">
         <h3 style="text-align: center;">${internArray[i].name}</h3>
         <i class="fas fa-address-card fa-4x d-flex justify-content-center"></i>
@@ -199,7 +199,7 @@ function htmlHead(){
     <header style="width: 100%; background-color: grey; height: 50px;">
     <h2 style="text-align: center;">Developer Team</h2>
     </header>
-    <div class="container d-flex">`
+    <div class="container d-flex justify-content-center">`
 
     fs.appendFile('output/team-profile.html', htmlHead, 'utf8', function (error) {
         if (error) {
